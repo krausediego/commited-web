@@ -5,33 +5,26 @@
 		"clientKind": "git",
 		"useIgnoreFile": true
 	},
-	"files": {
-		"ignoreUnknown": false,
-		"ignore": [
-			"dist",
-			"build",
-			".turbo",
-			"node_modules",
-			"coverage",
-			"*.gen.ts",
-			"routeTree.gen.ts"
-		]
+	"assist": {
+		"actions": {
+			"source": {
+				"organizeImports": "on"
+			}
+		}
 	},
 	"formatter": {
 		"enabled": true,
 		"indentStyle": "space",
 		"indentWidth": 2,
 		"lineWidth": 100,
-		"lineEnding": "lf"
-	},
-	"organizeImports": {
-		"enabled": true
+		"lineEnding": "lf",
+		"formatWithErrors": true
 	},
 	"linter": {
 		"enabled": true,
+		"includes": ["**", "!**/routeTree.gen.ts"],
 		"rules": {
 			"recommended": true,
-
 			"correctness": {
 				"recommended": true,
 				"noUnusedVariables": "error",
@@ -39,8 +32,7 @@
 				"useExhaustiveDependencies": "error",
 				"useHookAtTopLevel": "error",
 				"noUndeclaredVariables": "error",
-				"noInvalidUseBeforeDeclaration": "error",
-				"useArrayLiterals": "error"
+				"noInvalidUseBeforeDeclaration": "error"
 			},
 
 			"suspicious": {
@@ -65,16 +57,17 @@
 				"useConst": "error",
 				"useTemplate": "error",
 				"useSelfClosingElements": "error",
-				"useShorthandArrayType": "error",
+				"noNonNullAssertion": "off",
+				"useConsistentArrayType": "error",
 				"useShorthandAssign": "error",
 				"noNegationElse": "error",
+				"useArrayLiterals": "error",
 				"noUnusedTemplateLiteral": "error",
 				"useNumberNamespace": "error",
 				"useExplicitLengthCheck": "error",
 				"useFragmentSyntax": "error",
 				"noParameterAssign": "error",
 				"useDefaultParameterLast": "error",
-				"noCommaOperator": "error",
 				"useEnumInitializers": "error",
 				"useLiteralEnumMembers": "error",
 				"useNamingConvention": {
@@ -113,6 +106,7 @@
 			},
 
 			"complexity": {
+				"noCommaOperator": "error",
 				"recommended": true,
 				"noExcessiveCognitiveComplexity": {
 					"level": "warn",
@@ -140,10 +134,6 @@
 				"useAltText": "error",
 				"noAutofocus": "warn",
 				"useSemanticElements": "error"
-			},
-
-			"nursery": {
-				"useImportRestrictions": "off"
 			}
 		}
 	},
@@ -170,16 +160,14 @@
 		},
 		"linter": {
 			"enabled": true
+		},
+		"parser": {
+			"cssModules": false,
+			"tailwindDirectives": true
 		}
 	},
 	"overrides": [
 		{
-			"include": [
-				"**/*.test.ts",
-				"**/*.test.tsx",
-				"**/*.spec.ts",
-				"**/*.spec.tsx"
-			],
 			"linter": {
 				"rules": {
 					"suspicious": {
@@ -193,7 +181,6 @@
 			}
 		},
 		{
-			"include": ["**/mocks/**/*.ts", "**/mocks/**/*.tsx", "**/__mocks__/**"],
 			"linter": {
 				"rules": {
 					"suspicious": {
@@ -207,7 +194,6 @@
 			}
 		},
 		{
-			"include": ["**/types/**/*.ts", "**/*.d.ts"],
 			"linter": {
 				"rules": {
 					"suspicious": {
@@ -217,7 +203,6 @@
 			}
 		},
 		{
-			"include": ["vite.config.ts", "vitest.config.ts"],
 			"linter": {
 				"rules": {
 					"suspicious": {

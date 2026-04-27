@@ -17,6 +17,6 @@ const prettierConfig = {
   endOfLine: "lf",
   embeddedLanguageFormatting: "auto",
   singleAttributePerLine: false,
-};
+}
 
-export default prettierConfig;
+export default prettierConfig
