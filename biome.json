@@ -1,0 +1,230 @@
+{
+	"$schema": "https://biomejs.dev/schemas/2.4.13/schema.json",
+	"vcs": {
+		"enabled": true,
+		"clientKind": "git",
+		"useIgnoreFile": true
+	},
+	"files": {
+		"ignoreUnknown": false,
+		"ignore": [
+			"dist",
+			"build",
+			".turbo",
+			"node_modules",
+			"coverage",
+			"*.gen.ts",
+			"routeTree.gen.ts"
+		]
+	},
+	"formatter": {
+		"enabled": true,
+		"indentStyle": "space",
+		"indentWidth": 2,
+		"lineWidth": 100,
+		"lineEnding": "lf"
+	},
+	"organizeImports": {
+		"enabled": true
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true,
+
+			"correctness": {
+				"recommended": true,
+				"noUnusedVariables": "error",
+				"noUnusedImports": "error",
+				"useExhaustiveDependencies": "error",
+				"useHookAtTopLevel": "error",
+				"noUndeclaredVariables": "error",
+				"noInvalidUseBeforeDeclaration": "error",
+				"useArrayLiterals": "error"
+			},
+
+			"suspicious": {
+				"recommended": true,
+				"noExplicitAny": "error",
+				"noConsole": {
+					"level": "warn",
+					"options": {
+						"allow": ["error", "warn"]
+					}
+				},
+				"noDoubleEquals": "error",
+				"noEmptyBlockStatements": "warn",
+				"noConfusingVoidType": "error",
+				"useAwait": "error",
+				"noAssignInExpressions": "error",
+				"noFallthroughSwitchClause": "error"
+			},
+
+			"style": {
+				"recommended": true,
+				"useConst": "error",
+				"useTemplate": "error",
+				"useSelfClosingElements": "error",
+				"useShorthandArrayType": "error",
+				"useShorthandAssign": "error",
+				"noNegationElse": "error",
+				"noUnusedTemplateLiteral": "error",
+				"useNumberNamespace": "error",
+				"useExplicitLengthCheck": "error",
+				"useFragmentSyntax": "error",
+				"noParameterAssign": "error",
+				"useDefaultParameterLast": "error",
+				"noCommaOperator": "error",
+				"useEnumInitializers": "error",
+				"useLiteralEnumMembers": "error",
+				"useNamingConvention": {
+					"level": "error",
+					"options": {
+						"strictCase": false,
+						"conventions": [
+							{
+								"selector": { "kind": "function" },
+								"formats": ["camelCase", "PascalCase"]
+							},
+							{
+								"selector": { "kind": "variable" },
+								"formats": ["camelCase", "PascalCase", "CONSTANT_CASE"]
+							},
+							{
+								"selector": { "kind": "typeLike" },
+								"formats": ["PascalCase"]
+							},
+							{
+								"selector": { "kind": "enumMember" },
+								"formats": ["CONSTANT_CASE", "PascalCase"]
+							},
+							{
+								"selector": { "kind": "objectLiteralProperty" },
+								"formats": [
+									"camelCase",
+									"PascalCase",
+									"CONSTANT_CASE",
+									"snake_case"
+								]
+							}
+						]
+					}
+				}
+			},
+
+			"complexity": {
+				"recommended": true,
+				"noExcessiveCognitiveComplexity": {
+					"level": "warn",
+					"options": { "maxAllowedComplexity": 12 }
+				},
+				"noForEach": "error",
+				"useFlatMap": "error",
+				"noUselessFragments": "error",
+				"noUselessStringConcat": "error",
+				"noUselessTernary": "error",
+				"useSimplifiedLogicExpression": "error",
+				"noExcessiveNestedTestSuites": "error"
+			},
+
+			"performance": {
+				"recommended": true,
+				"noBarrelFile": "warn",
+				"noReExportAll": "warn",
+				"useTopLevelRegex": "error"
+			},
+
+			"a11y": {
+				"recommended": true,
+				"useButtonType": "error",
+				"useAltText": "error",
+				"noAutofocus": "warn",
+				"useSemanticElements": "error"
+			},
+
+			"nursery": {
+				"useImportRestrictions": "off"
+			}
+		}
+	},
+	"javascript": {
+		"formatter": {
+			"quoteStyle": "double",
+			"trailingCommas": "all",
+			"semicolons": "asNeeded",
+			"bracketSpacing": true,
+			"bracketSameLine": false,
+			"arrowParentheses": "always"
+		},
+		"linter": {
+			"enabled": true
+		},
+		"globals": ["React"]
+	},
+	"css": {
+		"formatter": {
+			"enabled": true,
+			"indentStyle": "space",
+			"indentWidth": 2,
+			"lineWidth": 100
+		},
+		"linter": {
+			"enabled": true
+		}
+	},
+	"overrides": [
+		{
+			"include": [
+				"**/*.test.ts",
+				"**/*.test.tsx",
+				"**/*.spec.ts",
+				"**/*.spec.tsx"
+			],
+			"linter": {
+				"rules": {
+					"suspicious": {
+						"noConsole": "off",
+						"noExplicitAny": "warn"
+					},
+					"complexity": {
+						"noExcessiveCognitiveComplexity": "off"
+					}
+				}
+			}
+		},
+		{
+			"include": ["**/mocks/**/*.ts", "**/mocks/**/*.tsx", "**/__mocks__/**"],
+			"linter": {
+				"rules": {
+					"suspicious": {
+						"noExplicitAny": "warn",
+						"noConsole": "off"
+					},
+					"performance": {
+						"noBarrelFile": "off"
+					}
+				}
+			}
+		},
+		{
+			"include": ["**/types/**/*.ts", "**/*.d.ts"],
+			"linter": {
+				"rules": {
+					"suspicious": {
+						"noExplicitAny": "warn"
+					}
+				}
+			}
+		},
+		{
+			"include": ["vite.config.ts", "vitest.config.ts"],
+			"linter": {
+				"rules": {
+					"suspicious": {
+						"noConsole": "off"
+					}
+				}
+			}
+		}
+	]
+}
