@@ -3,6 +3,11 @@ import LanguageDetector from "i18next-browser-languagedetector"
 import Backend, { type HttpBackendOptions } from "i18next-http-backend"
 import { initReactI18next } from "react-i18next"
 import { isProduction } from "./utils"
+import type enTranslations from "../../public/locales/en/translations.json"
+
+export type Resources = {
+  [defaultNS]: typeof enTranslations
+}
 
 export const defaultNS = "translations"
 
