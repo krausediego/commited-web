@@ -1,215 +1,210 @@
 {
-	"$schema": "https://biomejs.dev/schemas/2.4.13/schema.json",
-	"vcs": {
-		"enabled": true,
-		"clientKind": "git",
-		"useIgnoreFile": true
-	},
-	"assist": {
-		"actions": {
-			"source": {
-				"organizeImports": "on"
-			}
-		}
-	},
-	"formatter": {
-		"enabled": true,
-		"indentStyle": "space",
-		"indentWidth": 2,
-		"lineWidth": 100,
-		"lineEnding": "lf",
-		"formatWithErrors": true
-	},
-	"linter": {
-		"enabled": true,
-		"includes": ["**", "!**/routeTree.gen.ts"],
-		"rules": {
-			"recommended": true,
-			"correctness": {
-				"recommended": true,
-				"noUnusedVariables": "error",
-				"noUnusedImports": "error",
-				"useExhaustiveDependencies": "error",
-				"useHookAtTopLevel": "error",
-				"noUndeclaredVariables": "error",
-				"noInvalidUseBeforeDeclaration": "error"
-			},
+  "$schema": "https://biomejs.dev/schemas/2.4.13/schema.json",
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": "on"
+      }
+    }
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineWidth": 100,
+    "lineEnding": "lf",
+    "formatWithErrors": true
+  },
+  "linter": {
+    "enabled": true,
+    "includes": ["**", "!**/routeTree.gen.ts"],
+    "rules": {
+      "recommended": true,
+      "correctness": {
+        "recommended": true,
+        "noUnusedVariables": "error",
+        "noUnusedImports": "error",
+        "useExhaustiveDependencies": "error",
+        "useHookAtTopLevel": "error",
+        "noUndeclaredVariables": "error",
+        "noInvalidUseBeforeDeclaration": "error"
+      },
 
-			"suspicious": {
-				"recommended": true,
-				"noExplicitAny": "error",
-				"noConsole": {
-					"level": "warn",
-					"options": {
-						"allow": ["error", "warn"]
-					}
-				},
-				"noDoubleEquals": "error",
-				"noEmptyBlockStatements": "warn",
-				"noConfusingVoidType": "error",
-				"useAwait": "error",
-				"noAssignInExpressions": "error",
-				"noFallthroughSwitchClause": "error"
-			},
+      "suspicious": {
+        "recommended": true,
+        "noExplicitAny": "error",
+        "noConsole": {
+          "level": "warn",
+          "options": {
+            "allow": ["error", "warn"]
+          }
+        },
+        "noDoubleEquals": "error",
+        "noEmptyBlockStatements": "warn",
+        "noConfusingVoidType": "error",
+        "useAwait": "error",
+        "noAssignInExpressions": "error",
+        "noFallthroughSwitchClause": "error"
+      },
 
-			"style": {
-				"recommended": true,
-				"useConst": "error",
-				"useTemplate": "error",
-				"useSelfClosingElements": "error",
-				"noNonNullAssertion": "off",
-				"useConsistentArrayType": "error",
-				"useShorthandAssign": "error",
-				"noNegationElse": "error",
-				"useArrayLiterals": "error",
-				"noUnusedTemplateLiteral": "error",
-				"useNumberNamespace": "error",
-				"useExplicitLengthCheck": "error",
-				"useFragmentSyntax": "error",
-				"noParameterAssign": "error",
-				"useDefaultParameterLast": "error",
-				"useEnumInitializers": "error",
-				"useLiteralEnumMembers": "error",
-				"useNamingConvention": {
-					"level": "error",
-					"options": {
-						"strictCase": false,
-						"conventions": [
-							{
-								"selector": { "kind": "function" },
-								"formats": ["camelCase", "PascalCase"]
-							},
-							{
-								"selector": { "kind": "variable" },
-								"formats": ["camelCase", "PascalCase", "CONSTANT_CASE"]
-							},
-							{
-								"selector": { "kind": "typeLike" },
-								"formats": ["PascalCase"]
-							},
-							{
-								"selector": { "kind": "enumMember" },
-								"formats": ["CONSTANT_CASE", "PascalCase"]
-							},
-							{
-								"selector": { "kind": "objectLiteralProperty" },
-								"formats": [
-									"camelCase",
-									"PascalCase",
-									"CONSTANT_CASE",
-									"snake_case"
-								]
-							}
-						]
-					}
-				}
-			},
+      "style": {
+        "recommended": true,
+        "useConst": "error",
+        "useTemplate": "error",
+        "useSelfClosingElements": "error",
+        "noNonNullAssertion": "off",
+        "useConsistentArrayType": "error",
+        "useShorthandAssign": "error",
+        "noNegationElse": "error",
+        "useArrayLiterals": "error",
+        "noUnusedTemplateLiteral": "error",
+        "useNumberNamespace": "error",
+        "useExplicitLengthCheck": "error",
+        "useFragmentSyntax": "error",
+        "noParameterAssign": "error",
+        "useDefaultParameterLast": "error",
+        "useEnumInitializers": "error",
+        "useLiteralEnumMembers": "error",
+        "useNamingConvention": {
+          "level": "error",
+          "options": {
+            "strictCase": false,
+            "conventions": [
+              {
+                "selector": { "kind": "function" },
+                "formats": ["camelCase", "PascalCase"]
+              },
+              {
+                "selector": { "kind": "variable" },
+                "formats": ["camelCase", "PascalCase", "CONSTANT_CASE"]
+              },
+              {
+                "selector": { "kind": "typeLike" },
+                "formats": ["PascalCase"]
+              },
+              {
+                "selector": { "kind": "enumMember" },
+                "formats": ["CONSTANT_CASE", "PascalCase"]
+              },
+              {
+                "selector": { "kind": "objectLiteralProperty" },
+                "formats": ["camelCase", "PascalCase", "CONSTANT_CASE", "snake_case"]
+              }
+            ]
+          }
+        }
+      },
 
-			"complexity": {
-				"noCommaOperator": "error",
-				"recommended": true,
-				"noExcessiveCognitiveComplexity": {
-					"level": "warn",
-					"options": { "maxAllowedComplexity": 12 }
-				},
-				"noForEach": "error",
-				"useFlatMap": "error",
-				"noUselessFragments": "error",
-				"noUselessStringConcat": "error",
-				"noUselessTernary": "error",
-				"useSimplifiedLogicExpression": "error",
-				"noExcessiveNestedTestSuites": "error"
-			},
+      "complexity": {
+        "noCommaOperator": "error",
+        "recommended": true,
+        "noExcessiveCognitiveComplexity": {
+          "level": "warn",
+          "options": { "maxAllowedComplexity": 12 }
+        },
+        "noForEach": "error",
+        "useFlatMap": "error",
+        "noUselessFragments": "error",
+        "noUselessStringConcat": "error",
+        "noUselessTernary": "error",
+        "useSimplifiedLogicExpression": "error",
+        "noExcessiveNestedTestSuites": "error"
+      },
 
-			"performance": {
-				"recommended": true,
-				"noBarrelFile": "warn",
-				"noReExportAll": "warn",
-				"useTopLevelRegex": "error"
-			},
+      "performance": {
+        "recommended": true,
+        "noBarrelFile": "warn",
+        "noReExportAll": "warn",
+        "useTopLevelRegex": "error"
+      },
 
-			"a11y": {
-				"recommended": true,
-				"useButtonType": "error",
-				"useAltText": "error",
-				"noAutofocus": "warn",
-				"useSemanticElements": "error"
-			}
-		}
-	},
-	"javascript": {
-		"formatter": {
-			"quoteStyle": "double",
-			"trailingCommas": "all",
-			"semicolons": "asNeeded",
-			"bracketSpacing": true,
-			"bracketSameLine": false,
-			"arrowParentheses": "always"
-		},
-		"linter": {
-			"enabled": true
-		},
-		"globals": ["React"]
-	},
-	"css": {
-		"formatter": {
-			"enabled": true,
-			"indentStyle": "space",
-			"indentWidth": 2,
-			"lineWidth": 100
-		},
-		"linter": {
-			"enabled": true
-		},
-		"parser": {
-			"cssModules": false,
-			"tailwindDirectives": true
-		}
-	},
-	"overrides": [
-		{
-			"linter": {
-				"rules": {
-					"suspicious": {
-						"noConsole": "off",
-						"noExplicitAny": "warn"
-					},
-					"complexity": {
-						"noExcessiveCognitiveComplexity": "off"
-					}
-				}
-			}
-		},
-		{
-			"linter": {
-				"rules": {
-					"suspicious": {
-						"noExplicitAny": "warn",
-						"noConsole": "off"
-					},
-					"performance": {
-						"noBarrelFile": "off"
-					}
-				}
-			}
-		},
-		{
-			"linter": {
-				"rules": {
-					"suspicious": {
-						"noExplicitAny": "warn"
-					}
-				}
-			}
-		},
-		{
-			"linter": {
-				"rules": {
-					"suspicious": {
-						"noConsole": "off"
-					}
-				}
-			}
-		}
-	]
+      "a11y": {
+        "recommended": true,
+        "useButtonType": "error",
+        "useAltText": "error",
+        "noAutofocus": "warn",
+        "useSemanticElements": "error"
+      }
+    }
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "double",
+      "trailingCommas": "all",
+      "semicolons": "asNeeded",
+      "bracketSpacing": true,
+      "bracketSameLine": false,
+      "arrowParentheses": "always"
+    },
+    "linter": {
+      "enabled": true
+    },
+    "globals": ["React"]
+  },
+  "css": {
+    "formatter": {
+      "enabled": true,
+      "indentStyle": "space",
+      "indentWidth": 2,
+      "lineWidth": 100
+    },
+    "linter": {
+      "enabled": true
+    },
+    "parser": {
+      "cssModules": false,
+      "tailwindDirectives": true
+    }
+  },
+  "overrides": [
+    {
+      "linter": {
+        "rules": {
+          "suspicious": {
+            "noConsole": "off",
+            "noExplicitAny": "warn"
+          },
+          "complexity": {
+            "noExcessiveCognitiveComplexity": "off"
+          }
+        }
+      }
+    },
+    {
+      "linter": {
+        "rules": {
+          "suspicious": {
+            "noExplicitAny": "warn",
+            "noConsole": "off"
+          },
+          "performance": {
+            "noBarrelFile": "off"
+          }
+        }
+      }
+    },
+    {
+      "linter": {
+        "rules": {
+          "suspicious": {
+            "noExplicitAny": "warn"
+          }
+        }
+      }
+    },
+    {
+      "linter": {
+        "rules": {
+          "suspicious": {
+            "noConsole": "off"
+          }
+        }
+      }
+    }
+  ]
 }

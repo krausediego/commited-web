@@ -15,7 +15,7 @@ const i18nOptions: InitOptions<HttpBackendOptions> = {
     escapeValue: false,
   },
   backend: {
-    loadPath: "/locales/{{lng}}/translations.json", // funciona em dev e prod
+    loadPath: "/locales/{{lng}}/translations.json",
   },
 }
 
